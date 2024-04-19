@@ -1,0 +1,305 @@
+$darkGray : #252525;
+$lightGray : #4C4C4C;
+$favColor : #E7AB3C;
+$textColor : white;
+$favSize : 14px;
+
+%bt {
+    border: 1px solid red;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+
+    >header {
+        width: 100%;
+        height: 100px;
+        background-color: $darkGray;
+        display: flex;
+        justify-content: center;
+
+        >nav {
+            width: 60%;
+            height: 100%;
+            background-color: $lightGray;
+            display: flex;
+            flex-wrap: wrap;
+
+            >* {
+                // @extend %bt;
+                display: flex;
+                color: $textColor;
+            }
+
+            >div:first-of-type {
+                width: 20%;
+                height: 50%;
+                align-items: center;
+                justify-content: center;
+                background-color: #3B3B3B;
+                // font-size: $favSize;
+                cursor: pointer;
+
+                >span {
+                    margin-right: 10px;
+                }
+            }
+
+            >ul {
+                width: 80%;
+                height: 50%;
+
+                >li {
+                    list-style-type: none;
+                    display: flex;
+                    flex-grow: 1;
+
+                    &:first-of-type {
+                        >a {
+                            background-color: $favColor;
+                        }
+                    }
+
+                    >a {
+                        text-decoration: none;
+                        color: $textColor;
+                        // background-color: red;
+                        display: flex;
+                        height: 100%;
+                        width: 100%;
+                        align-items: center;
+                        justify-content: center;
+                        transition: .3s;
+                        font-size: $favSize;
+                        margin-right: 2px;
+                        background-color: $darkGray;
+
+                        &:hover {
+                            background-color: $favColor;
+                        }
+                    }
+                }
+            }
+
+            >div:last-of-type {
+                width: 100%;
+                height: 50%;
+                align-items: center;
+                justify-content: end;
+                padding-right: 10px;
+
+                >a {
+                    text-decoration: none;
+                    color: $textColor;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 5px 10px;
+                    background-color: $darkGray;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+
+    >.first {
+        width: 100%;
+        height: 79vh;
+        background-image: url(img/hero-1.jpg);
+        object-fit: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        // @extend %bt;
+
+        >div:first-of-type {
+            height: 100%;
+            margin: 0 20%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            // @extend %bt;
+
+            >* {
+                width: 100%;
+            }
+
+            >span {
+                color: $favColor;
+                font-size: $favSize;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+
+            >h1 {
+                font-size: 70px;
+                color: $darkGray;
+                margin-bottom: 10px;
+            }
+
+            >p {
+                width: 40%;
+                line-height: 25px;
+                // @extend %bt;
+                font-size: 16px;
+                color: $lightGray;
+                margin-right: 60%;
+                margin-bottom: 20px;
+            }
+
+            >a {
+                display: flex;
+                width: fit-content;
+                text-decoration: none;
+                padding: 15px 25px;
+                background-color: $favColor;
+                color: $textColor;
+            }
+        }
+
+        >div:last-of-type {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: $favColor;
+            position: absolute;
+            top: 150px;
+            right: 850px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $textColor;
+            font-size: 32px;
+            font-weight: 600;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 4px;
+                top: 4px;
+                width: calc(100% - 12px);
+                height: calc(100% - 12px);
+                border: 2px dashed #ffffff;
+                border-radius: 50%;
+            }
+        }
+    }
+    >.gallery{
+        width: 100%;
+        height: 400px;
+        // @extend %bt;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        >div{
+            // @extend %bt;
+            width: 95%;
+            display: flex;
+            // height: 300px;
+            justify-content: space-between;
+            >figure{
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: default;
+                // transition: .3s;
+                &::after{
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    // border: 1px solid red;
+                    position: absolute;
+                    transition: 0.5s;
+                    border: 13px solid rgb(255, 255, 255);
+                    opacity: .3;
+                }
+                &:hover{
+                    &::after{
+                        width: 80%;
+                        height: 80%;
+                    }
+                }
+                >figcaption{
+                    position: absolute;
+                    padding: 10px 25px;
+                    background-color: #fff;
+                    font-size: 25px;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+    >.my-signature{
+        width: 190px;
+        height: 190px;
+        display: flex;
+        flex-wrap: wrap;
+        position: fixed;
+        right: 40px;
+        bottom: 30px;
+        border: 3px solid rgb(0, 0, 0);
+        border-radius: 50%;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        cursor: pointer;
+        >img{
+            position: relative;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            &:hover{
+                ~ div{
+                    left: -41px;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        >div{
+            width: 40px;
+            height: 160px;
+            /* border: 1px solid red; */
+            position: absolute;
+            top: 0;
+            left: 70px;
+            opacity: 0;
+            visibility: hidden;
+            transition: .4s ease;
+            &:hover{
+                left: -45px;
+                opacity: 1;
+                visibility: visible;
+            }
+            >a{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 40px;
+                border: 2px solid rgb(0, 0, 0);
+                border-radius: 50%;
+                color: black;
+                font-size: 18px;
+                margin-bottom: 5px;
+                transition: .3s ease;
+                position: relative;
+                &:hover{
+                    background-color: black;
+                    color: whitesmoke;
+                }
+            }
+        }
+    }
+
+}
