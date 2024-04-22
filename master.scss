@@ -16,6 +16,7 @@ $favSize : 14px;
 
 body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 
 main {
@@ -207,6 +208,7 @@ main {
             // height: 300px;
             justify-content: space-between;
             >figure{
+                width: 33.3%;
                 position: relative;
                 display: flex;
                 align-items: center;

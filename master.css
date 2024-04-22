@@ -6,6 +6,7 @@
 
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 main {
@@ -171,6 +172,7 @@ main > .gallery > div {
   justify-content: space-between;
 }
 main > .gallery > div > figure {
+  width: 33.3%;
   position: relative;
   display: flex;
   align-items: center;
